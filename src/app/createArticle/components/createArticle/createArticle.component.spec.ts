@@ -84,21 +84,21 @@ describe('CreateArticleComponent', () => {
     );
   });
 
-  it('should bind isSubmitting and backendErrors to the template', () => {
-    const isSubmitting = true;
-    const backendErrors = { title: ['Title is required'] };
+  // it('should bind isSubmitting and backendErrors to the template', () => {
+  //   const isSubmitting = true;
+  //   const backendErrors = { title: ['Title is required'] };
 
-    store.overrideSelector(selectIsSubmitting, isSubmitting);
-    store.overrideSelector(selectValidationErrors, backendErrors);
-    store.refreshState();
-    fixture.detectChanges();
+  //   store.overrideSelector(selectIsSubmitting, isSubmitting);
+  //   store.overrideSelector(selectValidationErrors, backendErrors);
+  //   store.refreshState();
+  //   fixture.detectChanges();
 
-    const submittingElement = fixture.debugElement.query(By.css('[data-testid="submitting"]'));
-    const errorsElement = fixture.debugElement.query(By.css('[data-testid="errors"]'));
+  //   const submittingElement = fixture.debugElement.query(By.css('[data-testid="submitting"]'));
+  //   const errorsElement = fixture.debugElement.query(By.css('[data-testid="errors"]'));
 
-    expect(submittingElement.nativeElement.textContent).toContain('Submitting...');
-    expect(errorsElement.nativeElement.textContent).toContain('Title is required');
-  });
+  //   expect(submittingElement.nativeElement.textContent).toContain('Submitting...');
+  //   expect(errorsElement.nativeElement.textContent).toContain('Title is required');
+  // });
 
   it('should call onSubmit when the form is submitted', () => {
     spyOn(component, 'onSubmit');

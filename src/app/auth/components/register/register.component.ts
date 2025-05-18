@@ -34,7 +34,6 @@ export class RegisterComponent {
   constructor(private fb: FormBuilder, private store: Store) {}
 
   onSubmit() {
-    console.log('form', this.form.getRawValue())
     const request: RegisterRequestInterface = {
       user: this.form.getRawValue(),
     }
